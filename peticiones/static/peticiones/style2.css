@@ -1,0 +1,143 @@
+/* Reset básico y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #4a00e0;
+    font-weight: 700;
+    font-size: 2.2rem;
+    width: 100%;
+    max-width: 600px;
+    user-select: none;
+    text-shadow: 1px 1px 3px rgba(74, 0, 224, 0.25);
+}
+
+/* Contenedor formulario - tipo card con sombra y borde redondeado */
+form {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(101, 69, 255, 0.15);
+    padding: 35px 40px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mensaje de confirmación */
+h2 {
+    background: #dcd0ff;
+    color: #4a00e0;
+    padding: 15px 20px;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(74, 0, 224, 0.3);
+}
+
+/* Contenedor de los campos */
+.form-container p {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #4a00e0;
+    user-select: none;
+}
+
+/* Inputs, textarea, selects */
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border-radius: 30px;
+    border: 2px solid #dcd0ff;
+    background-color: #f7f3ff;
+    color: #333;
+    transition: border-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: inset 0 1px 3px rgba(74, 0, 224, 0.1);
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    outline: none;
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px #6a11cbaa;
+}
+
+/* Botón enviar */
+button[type="submit"] {
+    margin-top: 30px;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    box-shadow: 0 6px 20px rgba(101, 69, 255, 0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
+    align-self: center;
+    user-select: none;
+    width: fit-content;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Contenedor botón volver */
+.boton-index {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+}
+
+.boton-volver {
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(74, 0, 224, 0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
+    user-select: none;
+    display: inline-block;
+}
+
+.boton-volver:hover {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    transform: scale(1.05);
+}

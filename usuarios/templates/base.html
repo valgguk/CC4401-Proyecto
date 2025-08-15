@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Mi Sitio{% endblock %}</title>
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-XwEy6Kd4mNUqYcYYu1Yl2ECVtgd6NkxP3PYsnrkf08qY0r6L3JAlP1AGzBbkYYR+rsy0DkRxmPDMOsK3J6yAgg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1><i class="fa-solid fa-user-circle"></i> Perfil</h1>
+        <nav>
+            <a href="{% url 'inicio' %}">
+                <i class="fa-solid fa-house"></i> Inicio
+            </a>
+            {% if not es_mi_perfil %}
+            <a href="{% url 'usuarios:perfil_usuario' request.user.username %}">
+                <i class="fa-solid fa-id-badge"></i> Mi Perfil
+            </a>
+            {% endif %}
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" title="Cerrar sesión">
+                    <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                </button>
+            </form>
+        </nav>
+    </header>
+    
+
+    <main>
+        {% block content %}
+        <!-- Contenido específico de la página -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p><i class="fa-solid fa-code"></i>GeekLog</p>
+    </footer>
+</body>
+</html>

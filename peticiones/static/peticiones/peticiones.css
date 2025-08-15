@@ -1,0 +1,72 @@
+body {
+    background-color: #c8ffbe;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header h1 {
+    text-align: center;
+    color: #2c5f2d;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    background-color: #f0ffe1;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: #55ad07c8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+td {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+tr:hover {
+    background-color: #e2ffd1;
+    transition: background-color 0.3s ease;
+}
+
+tr[onclick]:hover {
+    background-color: #d6f7b8 !important;
+    cursor: pointer;
+}
+
+.boton-volver {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-volver {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #45a049;
+}

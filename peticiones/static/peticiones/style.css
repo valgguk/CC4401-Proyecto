@@ -1,0 +1,97 @@
+body {
+    background-color: #d3ffcc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px 20px;
+    background-color: #f5fff0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 30px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container p {
+    margin-bottom: 15px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #43a047;
+}
+
+.boton-index {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-volver {
+    display: inline-block;
+    background-color: #388e3c;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #2e7d32;
+}
+
+.mensaje-exito {
+    text-align: center;
+    background-color: #c8facc;
+    color: #256029;
+    padding: 12px;
+    border: 2px solid #81c784;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

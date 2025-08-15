@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resolver peticion</title>
+    <link rel="stylesheet" href="{% static 'peticiones/resolver-peticion.css' %}" />
+</head>
+<body>
+    <h1 class="titulo">Petición {{ peticion.id }} por resolver</h1>
+    <div class="info">
+        <div id="info" class="main-container">
+            <h1>Información petición</h1>
+            <div id="info-peticion" class="container">
+                <p><b>Título:</b> {{ peticion.titulo }}</p>
+                <p><b>Descripción:</b> {{ peticion.descripcion }}</p>
+                <p><b>Tipo:</b> {{ peticion.tipo }}</p>
+                <p><b>Autor:</b> {{ peticion.autor }}</p>
+                <p><b>Estudio:</b> {{ peticion.estudio }}</p>
+                <p><b>Director:</b> {{ peticion.director }}</p>
+                <p><b>Editorial:</b> {{ peticion.editorial }}</p>
+                <p><b>Fecha de lanzamiento:</b> {{ peticion.fecha_lanzamiento }}</p>
+                <p><b>URL a imagen:</b> {{ peticion.imagen }}</p>
+                <p><b>Estado:</b> {{ peticion.estado }}</p>
+            </div><br>
+            <div id="resolver-peticion" class="container">
+                <form action="" method="post">
+                    <h2>Resolver petición</h2>
+                    {% csrf_token %}
+                    {{ form_resolver.as_p }}
+                    <button type="submit">Resolver petición</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a class="boton-index" href="{% url 'peticiones:ver-peticiones' %}">Volver a peticiones</a>
+</body>
+</html>

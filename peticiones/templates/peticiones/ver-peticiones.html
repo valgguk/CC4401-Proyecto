@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Peticiones</title>
+    <link rel="stylesheet" href="{% static 'peticiones/ver-peticiones.css' %}" />
+</head>
+<body>
+    <table>
+        <caption><h1>Peticiones de usuarios</h1></caption>
+        <thead>
+            <tr>
+                <th>ID Petición</th>
+                <th>Título</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if peticiones %}
+                {% for peticion in peticiones %}
+                {% if peticion.estado == 'PENDIENTE' %}
+                <tr onclick="window.location.href='{% url 'peticiones:resolver_peticion' peticion.id %}'" style="cursor: pointer;">
+                {% else %}
+                <tr>
+                {% endif %}
+                    <td>{{ peticion.id }}</td>
+                    <td>{{ peticion.titulo }}</td>
+                    <td>{{ peticion.tipo }}</td>
+                    <td>{{ peticion.estado }}</td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table><br>
+    <a class="boton-index" href="{% url 'inicio' %}">Volver al inicio</a>
+</body>
+</html>

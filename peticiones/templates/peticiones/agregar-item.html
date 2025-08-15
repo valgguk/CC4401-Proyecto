@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir ítem</title>
+    <link rel="stylesheet" href="{% static 'peticiones/style2.css' %}" />
+</head>
+<body>
+    <h1> Añadir un nuevo Ítem </h1>
+    <form action="" method="post">
+        {% if listo %}
+        <h2>Nuevo ítem añadido!</h2>
+        {% endif %}
+        <div class="form">
+            <div class="form-container">
+                {% csrf_token %}
+                {{ form_item.as_p }}
+            </div>
+        </div>
+        <button type="submit">Agregar nuevo ítem</button>
+    </form>
+    <div class="boton-index">
+        <a href="{% url 'inicio' %}" class="boton-volver">Volver al inicio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Editar Perfil</title>
+  <link rel="stylesheet" href="{% static 'css/editar_perfil.css' %}">
+</head>
+<body>
+
+  {% block content %}
+  {% if mensaje_confirmacion %}
+    <p class="mensaje-exito">{{ mensaje_confirmacion }}</p>
+  {% endif %}
+  <h2>Editar Perfil</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="first_name">Nombre:</label>
+    <input type="text" name="first_name" value="{{ request.user.first_name }}"><br>
+
+    <label for="last_name">Apellido:</label>
+    <input type="text" name="last_name" value="{{ request.user.last_name }}"><br>
+
+    <label for="email">Correo:</label>
+    <input type="email" name="email" value="{{ request.user.email }}"><br>
+
+    <label for="bio">Biografía:</label><br>
+    <textarea name="bio" id="bio" rows="4" cols="50">{{ request.user.bio }}</textarea><br>
+    
+    <label for="avatar">Avatar:</label>
+    {% if request.user.avatar %}
+      <img src="{{ request.user.avatar.url }}" alt="Avatar actual" width="100" style="border-radius: 50%;"><br>
+    {% endif %}
+    <input type="file" name="avatar" accept="image/*"><br><br>
+
+    <button type="submit">Guardar cambios</button>
+  </form>
+  <a href="{% url 'usuarios:perfil_usuario' username %}">Volver al perfil</a>
+  {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ item.titulo }}</title>
+</head>
+<body>
+    <h1>{{ item.titulo }} ({{ item.tipo }})</h1>
+    <p><strong>Descripción:</strong> {{ item.descripcion }}</p>
+    <p><strong>Autor:</strong> {{ item.autor }}</p>
+    <p><strong>Fecha de lanzamiento:</strong> {{ item.fecha_lanzamiento }}</p>
+    <p><strong>Imagen:</strong></p>
+    {% if item.imagen %}
+        <img src="{{ item.imagen }}" alt="Imagen" style="max-height: 200px;">
+    {% else %}
+        <img src="{% static 'image/icon_default.jpeg' %}" alt="Sin imagen" style="max-height: 100px;">
+    {% endif %}
+
+    <hr>
+   <h2>Reseñas</h2>
+{% if reseñas %}
+    {% for reseña in reseñas %}
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <strong>{{ reseña.autor.username }}</strong> dijo:
+            <p>{{ reseña.contenido }}</p>
+            <small>{{ reseña.fecha_creacion|date:"d M Y H:i" }}</small>
+
+            <h4>Comentarios:</h4>
+            {% if reseña.comentarios.all %}
+                <ul>
+                {% for comentario in reseña.comentarios.all %}
+                    <li><strong>{{ comentario.autor.username }}:</strong> {{ comentario.contenido }}</li>
+                {% empty %}
+                    <li>No hay comentarios aún.</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'comentar_reseña' reseña.id %}">
+                    {% csrf_token %}
+                    <textarea name="contenido" placeholder="Comenta algo..." required></textarea><br>
+                    <button type="submit">Comentar</button>
+                </form>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No hay reseñas aún.</p>
+{% endif %}
+
+    <hr>
+    <h2>Agregar nueva reseña</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Publicar reseña</button>
+    </form>
+
+    <br><br>
+    <a href="{% url 'inicio' %}">Volver al inicio</a>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi {{ tipo }} fav</title>
+    <link rel="stylesheet" href="{% static 'biblioteca_personal/mi-item.css' %}">
+</head>
+<body>
+    <h1> Ficha {{ tipo }} favorito/a</h1>
+    <div class="info">
+        <div id="info" class="main-container">
+            <div>
+                <p><b>Título:</b> {{ favorito.item.titulo }}</p>
+                <p><b>Descripción:</b> {{ favorito.item.descripcion }}</p>
+                <p><b>Tipo:</b> {{ favorito.item.tipo }}</p>
+                <p><b>Autor:</b> {{ favorito.item.autor }}</p>
+                <p><b>Estudio:</b> {{ favorito.item.estudio }}</p>
+                <p><b>Director:</b> {{ favorito.item.director }}</p>
+                <p><b>Editorial:</b> {{ favorito.item.editorial }}</p>
+                <p><b>Fecha de lanzamiento:</b> {{ favorito.item.fecha_lanzamiento }}</p>
+                <p><b>Imagen:</b>
+                {% if favorito.item.imagen %}
+                    <img src="{{ favorito.item.imagen }}" alt="Portada" style="max-height: 180px; max-width: 140px;">
+                {% else %}
+                    <img src="{% static 'image/icon_default.jpeg' %}" alt="Sin imagen" style="max-height: 100px;">
+                {% endif %}
+                </p>
+            </div><br>
+        </div>
+            <div class="editar">
+                <h2>Mi progreso</h2>
+                <p><b>Mi puntuación:</b> {{ favorito.puntuacion }} estrellas</p>
+                <p><b>Mi marca páginas:</b> {{ favorito.marca_pagina }}</p>
+                <button type="button" onclick="abrirModal()">Editar</button>
+            </div>
+            <a href="{% url 'mis_items' tipo %}">
+                <button type="button">Volver a mis {{ tipo }}s</button>
+            </a>
+    </div>
+    <div class="modal-overlay" id="modal">
+        <div class="modal-contenido">
+        <form method="POST" id="formulario-modal">
+            {% csrf_token %}
+            <h3>Editar información:</h3>
+            <h4>{{ favorito.item.titulo }}</h4>
+            <label for="marca_pagina">Marca página, en donde vas?:</label>
+            <input type="text" name="marca_pagina" required placeholder="Estado actual"><br><br>
+            <label for="puntuacion">Que puntación le das?:</label>
+            <select name="puntuacion" required>
+                <option value="">Ingresar puntuación</option>
+                <option value="1">1 ⭐</option>
+                <option value="2">2 ⭐⭐</option>
+                <option value="3">3 ⭐⭐⭐</option>
+                <option value="4">4 ⭐⭐⭐⭐</option>
+                <option value="5">5 ⭐⭐⭐⭐⭐</option>
+            </select><br><br>
+            <div class="modal-acciones">
+            <button type="button" onclick="cerrarModal()">Cancelar</button>
+            <button type="submit">Confirmar</button>
+            </div>
+        </form>
+        </div>
+    </div>    
+</body>
+<script>
+    function abrirModal() {
+        document.getElementById('modal').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+</script>
+</html>

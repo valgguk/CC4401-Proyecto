@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="{% static 'base/inicio.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+      <a href="{% url 'inicio' %}">
+        <div class="navbar-left">
+            <span class="site-name">GeekLog</span>
+        </div>
+      </a>
+        <div class="navbar-center">
+            <form method="post" action="{% url 'buscar_item' %}">
+              {% csrf_token %}
+                <input type="text" name="titulo" placeholder="Buscar item">
+                <select name="tipo">
+                    <option value="">-- Tipo --</option>
+                    <option value="Libro">Libro</option>
+                    <option value="Manga">Manga</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Película">Película</option>
+                    <option value="Cómic">Cómic</option>
+                </select>
+            </form>
+            <form action="{% url 'usuarios:buscar_usuario' %}" method="get">
+              <input type="text" name="q2" placeholder="Buscar usuario...">
+              <button type="submit">Buscar</button>
+          </form>
+        </div>
+
+        <div class="navbar-right">
+            <a href="{% url 'usuarios:perfil_usuario' request.user.username %}">
+            <img src="{% static 'image/no_user.png' %}" alt="Perfil" class="profile-icon">
+            </a>
+        </div>
+    </nav>
+    <div class="inicio-container">
+        <h2>Bienvenido {{ user.username }}</h2>
+        <p>Cuál será tu próxima acción?</p>
+        <div class="boton-grid">
+          <a href="{% url 'usuarios:perfil_usuario' request.user.username %}" class="boton-imagen">
+            <img src="{% static 'image/user.png' %}" alt="Mi Pefil">
+          <span>Ver mi perfil</span>
+          </a>
+          <a href="{% url 'biblioteca_global' %}" class="boton-imagen">
+            <img src="{% static 'image/biblio_universal.png' %}" alt="Biblioteca">
+          <span>Encontrar nuevos mundos</span>
+          </a>
+          <a href="{% url 'mi-biblioteca' %}" class="boton-imagen">
+            <img src="{% static 'image/mi_biblio.png' %}" alt="Mi Biblioteca">
+          <span>Ver mi biblioteca</span>
+        {% if request.user.tipo == 'usuario' %}
+          <a href="{% url 'peticiones:peticion-base' %}" class="boton-imagen">
+            <img src="{% static 'image/solicitud.png' %}" alt="Peticion">
+          <span>Petición para agregar ítem</span>
+          </a>
+        {% elif request.user.tipo == 'admin' %}
+          <a href="{% url 'peticiones:agregar_item' %}" class="boton-imagen">
+            <img src="{% static 'image/solicitud.png' %}" alt="Añadir item">
+          <span>Añadir nuevo ítem</span>
+          </a>
+          <div class="fila-centro">
+            <a href="{% url 'peticiones:ver-peticiones' %}" class="boton-imagen">
+              <img src="{% static 'image/peticiones.png' %}" alt="Peticiones">
+            <span>Ver peticiones de ítems</span>
+            </a>
+          </div>
+        {% endif %}
+        </div>
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit">Cerrar sesión</button>
+        </form>
+    </div>
+</body>
+</html>

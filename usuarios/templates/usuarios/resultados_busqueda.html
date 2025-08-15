@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Resultados para "{{ query }}"</h2>
+  {% if usuarios %}
+    <ul>
+      {% for user in usuarios %}
+        <li><a href="{% url 'usuarios:perfil_usuario' user.username %}">{{ user.username }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No se encontraron usuarios.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,332 @@
+[
+{
+  "model": "categorias.item",
+  "pk": 1,
+  "fields": {
+    "titulo": "One Piece",
+    "descripcion": "One Piece es una aventura de piratas que sigue las peripecias de Monkey D. Luffy y su tripulación, los Piratas del Sombrero de Paja, en su búsqueda del tesoro legendario, One Piece, para convertirse en el Rey de los Piratas.\r\n| Demografía: Shonen\r\n| Temas: fighting, pirates, superpowers\r\n| Género: Acción, aventuras, comedia, fantasía",
+    "tipo": "Manga",
+    "autor": "Eiichiro Oda",
+    "estudio": null,
+    "director": null,
+    "editorial": "Shueisha (Weekly Shonen Jump)",
+    "fecha_lanzamiento": "1997-07-22",
+    "imagen": "https://i.pinimg.com/736x/3e/7a/3c/3e7a3c85bb93197f01826b290121103e.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 2,
+  "fields": {
+    "titulo": "Demon Slayer: Kimetsu no Yaiba (T1)",
+    "descripcion": "Demon Slayer, es un anime japonés que cuenta la historia de Tanjiro Kamado, un joven que se convierte en cazador de demonios tras la matanza de su familia y la posterior transformación de su hermana menor, Nezuko, en una criatura demoníaca. \r\n\r\nLa primera temporada es el punto de partida de la historia de Demon Slayer, presentando al protagonista Tanjiro, su hermana Nezuko, y el mundo de los demonios y los cazadores de demonios. \r\n\r\n| Otros títulos: Arco de la Resolución Inquebrantable, Guardianes de la noche\r\n| Demografía:\tShonen\r\n| Género: Acción, aventura,​ comedia, drama, fantasía oscura, histórico, sobrenatural.\r\n| Arco argumental adaptado: Selección Final, Training de Rehabilitación. \r\n| Dónde verla: Se puede ver en plataformas como Crunchyroll, Hulu, y Netflix.",
+    "tipo": "Anime",
+    "autor": "Koyoharu Gotoge",
+    "estudio": "Ufotable",
+    "director": "Haruo Sotozaki",
+    "editorial": null,
+    "fecha_lanzamiento": "2019-04-06",
+    "imagen": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/6/62/Kimetsu_no_Yaiba_Key_Visual_1.png"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 3,
+  "fields": {
+    "titulo": "Shingeki no Kyojin (Attack on Titan) (T2)",
+    "descripcion": "La temporada sigue a Eren Jaeger y a sus amigos del 104.º Cuerpo de Entrenamiento, quienes acaban de convertirse en miembros de pleno derecho del Cuerpo de Inspección. Tras luchar contra la Titán Hembra, Eren no descansa, pues una horda de Titanes se acerca al Muro Rosa y la batalla por la humanidad continúa.\r\n\r\n| Otros títulos: Ataque a los titanes, SNK, AOT\r\n| Demografía: Shonen \r\n| Temas: Venganza, libertad, lucha, supervivencia, naturaleza humana\r\n| Género: Acción, fantasía oscura, drama post-apocalíptico",
+    "tipo": "Anime",
+    "autor": "Hajime Isayama",
+    "estudio": "Wit Studio, Production I.G (cooperación)",
+    "director": "Tetsuro Araki, Masashi Koizuka",
+    "editorial": null,
+    "fecha_lanzamiento": "2017-04-01",
+    "imagen": "https://i.pinimg.com/736x/2a/26/8b/2a268b100ea5290925e9698fa2458057.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 4,
+  "fields": {
+    "titulo": "Devil May Cry: The Animated Series",
+    "descripcion": "La serie animada \"Devil May Cry\", producida por Studio Mir y con Adi Shankar como showrunner, sigue a Dante, un cazador de demonios a sueldo, mientras lucha contra fuerzas demoníacas que amenazan la Tierra. La serie se basa en la franquicia de videojuegos de Capcom del mismo nombre. Dante, que cree que su hermano gemelo, Vergil, está muerto, se enfrenta a un enemigo poderoso y descubre que el destino de ambos mundos está en sus manos. \r\n| Basado en: Devil May Cry de Capcom\r\n| Otros títulos: El diablo puede llorar\r\n| Género: \tAcción, fantasía urbana, animación para adultos, aventura",
+    "tipo": "Anime",
+    "autor": "Adi Shankar, Alex Larsen",
+    "estudio": "Studio Mir",
+    "director": "Shin Itagaki",
+    "editorial": null,
+    "fecha_lanzamiento": "2025-04-03",
+    "imagen": "https://i.pinimg.com/736x/b3/a0/97/b3a097c79aa719d2f448203a7bdb9524.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 5,
+  "fields": {
+    "titulo": "Latna Saga: The Survival Sword King (Manhwa)",
+    "descripcion": "Ryu Han-Bin era una persona normal que acababa de ser dado de baja del servicio militar obligatorio cuando fue transportado a otro mundo. Abandonado a su suerte, se le encomendó el objetivo de sobrevivir y fortalecerse en un mundo desolado y plagado de monstruos. El problema es que la «Guía», que se suponía que debía ser su sistema de supervivencia, está llena de errores.\r\n| Otros títulos:  Registros de supervivencia del Rey de la Espada del Otro Mundo, Otherworldly Sword King's Survival Records\r\n| Demografía: Shounen\r\n| Género: Acción, aventuras, comedia, fantasía, misteria, tragedia, isekai",
+    "tipo": "Manga",
+    "autor": "Kyungbae Lim",
+    "estudio": null,
+    "director": null,
+    "editorial": "Webtoon, Kakao Page",
+    "fecha_lanzamiento": "2019-12-31",
+    "imagen": "https://i.pinimg.com/736x/ae/5c/5e/ae5c5e11209cc9af0fb9c5003bda4535.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 6,
+  "fields": {
+    "titulo": "1984",
+    "descripcion": "En un mundo totalitario vigilado por el Gran Hermano, Winston Smith comienza a cuestionar el sistema mientras trabaja en el Ministerio de la Verdad.\r\n| Género: Ciencia ficción, distopía, política\r\n| Tema(s): Estado vigilante, derechos humanos, libertad intelectual y totalitarismo",
+    "tipo": "Libro",
+    "autor": "George Orwell",
+    "estudio": null,
+    "director": null,
+    "editorial": "Penguin Libros, Debolsillo, Zig-Zag, Alma Editorial, Editorial USACH, Austral Editorial",
+    "fecha_lanzamiento": "1949-06-08",
+    "imagen": "https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 7,
+  "fields": {
+    "titulo": "Watchmen",
+    "descripcion": "En un universo alternativo donde los superhéroes existen, un asesinato revela una conspiración que podría cambiar el destino del mundo.\r\n| Otros títulos: Vigilantes\r\n| Género: Superhéroes, distopía, política",
+    "tipo": "Cómic",
+    "autor": "Alan Moore (guion), Dave Gibbons (ilustración)",
+    "estudio": null,
+    "director": null,
+    "editorial": "DC Comics",
+    "fecha_lanzamiento": "1986-09-01",
+    "imagen": "https://i.pinimg.com/736x/cc/11/3b/cc113ba6449d48be89d034170b04acb1.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 8,
+  "fields": {
+    "titulo": "Harry Potter y la piedra filosofal",
+    "descripcion": "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y el insoportable primo Dudley. Harry se siente muy triste y solo, hasta que un buen día recibe una carta que cambiará su vida para siempre. En ella le comunican que ha sido aceptado como alumno en el Colegio Hogwarts de Magia.\r\n| Otros títulos: Harry Potter 1\r\n| Género: Fantasía\r\n| Temas: Magia, Infantil",
+    "tipo": "Película",
+    "autor": "J. K. Rowling",
+    "estudio": "Warner Bros.",
+    "director": "Chris Columbus",
+    "editorial": null,
+    "fecha_lanzamiento": "2001-11-16",
+    "imagen": "https://m.media-amazon.com/images/S/pv-target-images/63b45eb0158d2570efea664f0d5c67379e514367605d3dc69763c14c6c83b4f1.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 9,
+  "fields": {
+    "titulo": "Demon Slayer: Kimetsu no Yaiba (T2)",
+    "descripcion": "Demon Slayer, es un anime japonés que cuenta la historia de Tanjiro Kamado, un joven que se convierte en cazador de demonios tras la matanza de su familia y la posterior transformación de su hermana menor, Nezuko, en una criatura demoníaca. \r\n\r\n| Demografía:\tShonen\r\n| Género: Acción, aventura,​ comedia, drama, fantasía oscura, histórico, sobrenatural.\r\n| Arco argumental adaptado: Arco del Tren Infinito y el Arco del Distrito Rojo\r\n| Dónde verla: Se puede ver en plataformas como Crunchyroll, Hulu, y Netflix.",
+    "tipo": "Anime",
+    "autor": "Koyoharu Gotoge",
+    "estudio": "Ufotable",
+    "director": "Haruo Sotozaki",
+    "editorial": null,
+    "fecha_lanzamiento": "2021-10-10",
+    "imagen": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/0/06/BD%26DVD_Entertainment_District_Arc_-_Volume_3.png"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 10,
+  "fields": {
+    "titulo": "Shingeki no Kyojin (Attack on Titan) (T1)",
+    "descripcion": "Shingeki no Kyojin narra la historia de la humanidad, que se ha refugiado dentro de tres muros gigantescos para protegerse de titanes, gigantes humanoides que devoran humanos. La trama gira en torno a Eren Yeager, Mikasa Ackerman y Armin Arlert, quienes, después de un ataque devastador a su ciudad, se unen al Cuerpo de Exploración para luchar contra los titanes. \r\n\r\n| Otros títulos: Ataque a los titanes, SNK, AOT\r\n| Demografía: Shonen \r\n| Temas: Venganza, libertad, lucha, supervivencia, naturaleza humana\r\n| Género: Acción, fantasía oscura, drama post-apocalíptico",
+    "tipo": "Anime",
+    "autor": "Hajime Isayama",
+    "estudio": "Wit Studio, Production I.G (cooperación)",
+    "director": "Tetsuro Araki",
+    "editorial": null,
+    "fecha_lanzamiento": "2013-04-06",
+    "imagen": "https://i.pinimg.com/736x/d9/08/63/d90863321b1499945364c0ddb17e1e92.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 11,
+  "fields": {
+    "titulo": "Harry Potter y el prisionero de Azkaban",
+    "descripcion": "Cuando Harry Potter y sus amigos vuelven a Hogwarts para cursar su tercer año de estudios, se ven involucrados en un misterio: de la prisión para magos de Azkaban se ha fugado Sirius Black, un peligroso mago que fue cómplice de Lord Voldemort y que intentará vengarse de Harry Potter.\r\n| Otros títulos: Harry Potter 3\r\n| Género: Fantasía\r\n| Temas: Magia, aventuras, muerte",
+    "tipo": "Película",
+    "autor": "J. K. Rowling",
+    "estudio": "Warner Bros.",
+    "director": "Alfonso Cuarón",
+    "editorial": null,
+    "fecha_lanzamiento": "2004-05-31",
+    "imagen": "https://i.pinimg.com/736x/5f/e9/bb/5fe9bb06f7769a25b5de016780483721.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 12,
+  "fields": {
+    "titulo": "Harry Potter y la cámara secreta",
+    "descripcion": "Terminado el verano, Harry no ve la hora de abandonar la casa de sus odiosos tíos. Inesperadamente se presenta en su dormitorio Dobby, un elfo doméstico, que le anuncia que correrá un gran peligro si vuelve a Hogwarts.\r\n| Otros títulos: Harry Potter 2\r\n| Género: Fantasía\r\n| Temas: Magia, aventuras, muerte",
+    "tipo": "Película",
+    "autor": "J. K. Rowling",
+    "estudio": "Warner Bros.",
+    "director": "Chris Columbus",
+    "editorial": null,
+    "fecha_lanzamiento": "2002-11-22",
+    "imagen": "https://i.pinimg.com/736x/26/ac/1e/26ac1e153c9f81168091260e3804f3f5.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 13,
+  "fields": {
+    "titulo": "Gonjiam: hospital maldito",
+    "descripcion": "Un grupo de personas se adentra en un manicomio abandonado para grabar un espectáculo que se transmite a través de internet. La diversión inicial se convierte en una pesadilla cuando las entidades malignas del lugar empiezan a atacarlos.\r\n\r\nFilmada en un auténtico hospital abandonado en la Provincia de Gyeonggi, Córea del Sur; Gonjiam recibió críticas positivas del público y críticos por igual. Mientras que en taquilla fue especialmente exitosa logrando recaudar más del triple de su modesto presupuesto.\r\n| Género: Terror psicológico, metraje encontrado, thriller, suspenso, misterio",
+    "tipo": "Película",
+    "autor": "Bum-shik, Park Sang-min",
+    "estudio": "Hive Media Corp.",
+    "director": "Jung Bum-shik",
+    "editorial": null,
+    "fecha_lanzamiento": "2018-03-28",
+    "imagen": "https://images.justwatch.com/poster/241789333/s718/gonjiam-psiquiatrico-maldito.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 14,
+  "fields": {
+    "titulo": "La verdad de Soraya M.",
+    "descripcion": "En una aldea remota de Irán, un periodista se ve abordado por Zarah, quien quiere contarle la trágica muerte de su sobrina Soroya, a quien acusaron en falso de ser adúltera. Su historia expone la discriminación contra las mujeres en Irán.\r\n| Otros títulos: El lapidamiento de Soraya M\r\n| Género: Drama, policial\r\n| Basada en: The Stoning of Soraya M.: A True Story de Freidoune Sahebjam",
+    "tipo": "Película",
+    "autor": "Freidoune Sahebjam",
+    "estudio": "Fallen Films, Mpower Pictures, Roadside Attractions, Prime Meridian Pctures",
+    "director": "Cyrus Nowrasteh",
+    "editorial": null,
+    "fecha_lanzamiento": "2009-06-26",
+    "imagen": "https://es.web.img3.acsta.net/medias/nmedia/18/79/77/42/19517392.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 15,
+  "fields": {
+    "titulo": "Interestelar",
+    "descripcion": "Un grupo de científicos y exploradores, encabezados por Cooper, se embarcan en un viaje espacial para encontrar un lugar con las condiciones necesarias para reemplazar a la Tierra y comenzar una nueva vida allí. La Tierra está llegando a su fin y este grupo necesita encontrar un planeta más allá de nuestra galaxia que garantice el futuro de la raza humana.\r\n| Género: Ciencia ficción/Aventura",
+    "tipo": "Película",
+    "autor": "Christopher Nolan, Jonathan Nolan",
+    "estudio": "Paramount Pictures, Sony Pictures, Warner Bros",
+    "director": "Christopher Nolan",
+    "editorial": null,
+    "fecha_lanzamiento": "2014-10-26",
+    "imagen": "https://i.pinimg.com/736x/a7/1b/f8/a71bf8959be0b11afe11cfcf22e54d59.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 16,
+  "fields": {
+    "titulo": "Volver al futuro I",
+    "descripcion": "El adolescente Marty McFly es amigo de Doc, un científico que ha construido una máquina del tiempo. Cuando los dos prueban el artefacto, un error fortuito hace que Marty llegue a 1955, año en el que sus padres iban al instituto y todavía no se habían conocido. Después de impedir su primer encuentro, Marty deberá conseguir que se conozcan y se enamoren, de lo contrario su existencia no sería posible.\r\n| Género: Infantil, ciencia ficción",
+    "tipo": "Película",
+    "autor": "Robert Zemeckis, Bob Gale",
+    "estudio": "Universal Pictures, Amblin Entertainment, U-Drive Productions",
+    "director": "Robert Zemeckis",
+    "editorial": null,
+    "fecha_lanzamiento": "1985-07-03",
+    "imagen": "https://i.pinimg.com/736x/6b/d0/65/6bd065b7133a6e1d288217160f3c22bb.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 17,
+  "fields": {
+    "titulo": "El problema de los tres cuerpos",
+    "descripcion": "\"El problema de los tres cuerpos\", la primera novela de la trilogía de Cixin Liu, explora la historia de un científico chino que se ve involucrado en un contacto extraterrestre. La trama se centra en la llegada de una civilización, los San-Ti, que habita un planeta con tres soles y que está amenazada por un futuro caótico. Los San-Ti, tecnológicamente avanzados, buscan refugio en la Tierra, lo que desencadena una serie de eventos que ponen en peligro a la humanidad. \r\n| Géneros: Ciencia ficción, novela, ciencia ficción dura, ficción especulativa, ciencia ficción china\r\n| Libro posterior: El bosque oscuro\r\n| Adaptaciones: El problema de los tres cuerpos (2024), The Three-Body Problem (2016)",
+    "tipo": "Libro",
+    "autor": "Liu Cixin",
+    "estudio": null,
+    "director": null,
+    "editorial": "Nova",
+    "fecha_lanzamiento": "2006-01-01",
+    "imagen": "https://www.penguinlibros.com/cl/1761617/el-problema-de-los-tres-cuerpos-trilogia-de-los-tres-cuerpos-1.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 18,
+  "fields": {
+    "titulo": "Delirium",
+    "descripcion": "Lena Holway siempre ha esperado el día en el que sería curada. Una vida sin amor es una vida sin sufrimiento: segura, medida, predecible y feliz. Pero faltando noventa y cinco días para recibir el tratamiento, Lena hace lo impensable: se enamora.\r\n| Géneros: Novela, ficción adulto joven, ciencia ficción, novela rosa, ficción distópica\r\n| Libro posterior: Pandemonium",
+    "tipo": "Libro",
+    "autor": "Lauren Oliver",
+    "estudio": null,
+    "director": null,
+    "editorial": "HarperCollins",
+    "fecha_lanzamiento": "2011-01-01",
+    "imagen": "https://i.pinimg.com/736x/25/ac/f5/25acf57cc026ab675933b775490fb6a0.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 19,
+  "fields": {
+    "titulo": "Pandemonium",
+    "descripcion": "Lena está atormentada por la culpa y la tristeza por haber perdido a Alex, el chico rebelde del que se enamoró, a pesar de que el amor (amor deliria nervosa o delirio) ha sido declarado una enfermedad por el gobierno estadounidense. Alex se entregó para que Lena pudiera escapar a las Tierras Salvajes y evitar \"la cura\", un mandato gubernamental para el delirio.\r\n| Géneros: Novela, Ficción adulto joven, Ciencia ficción, Novela rosa, Ficción distópica\r\n| Libro posterior: Requiem, Delirium - Tome 3 - Requiem\r\n| Libro anterior: Delirium, Delirium - Tome 1",
+    "tipo": "Libro",
+    "autor": "Lauren Oliver",
+    "estudio": null,
+    "director": null,
+    "editorial": "HarperCollins",
+    "fecha_lanzamiento": "2012-02-28",
+    "imagen": "https://i.pinimg.com/736x/97/4d/7b/974d7b9c881ed127cc62b20ef94b1bf9.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 20,
+  "fields": {
+    "titulo": "The Simpsons Treehouse of Horror Ominous Omnibus Vol. 1: Scary Tales and Scary (Volume 1) (The Simpsons Treehouse of Horror, 1)",
+    "descripcion": "La Casa-Árbol del Terror de Los Simpson: Ominous Omnibus Vol. 1: Cuentos de Terror y Tentáculos Más Terroríficos es el primero de tres volúmenes que recopilan la serie completa de cómics del creador Matt Groening, presentado en un estuche de lujo troquelado que brilla en la oscuridad.",
+    "tipo": "Cómic",
+    "autor": "Matt Groening",
+    "estudio": null,
+    "director": null,
+    "editorial": "Harry N. Abrams",
+    "fecha_lanzamiento": "2022-08-02",
+    "imagen": "https://m.media-amazon.com/images/I/81Yr0s5FzgL._SY522_.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 21,
+  "fields": {
+    "titulo": "The Simpsons Treehouse of Horror Ominous Omnibus Vol. 2: Deadtime Stories for Boos & Ghouls (The Simpsons Treehouse of Horror, 2) (Volume 2)",
+    "descripcion": "El segundo de tres volúmenes que recopilan los cómics completos de Los Simpson: La Casa-Árbol del Horror, del creador Matt Groening, se presenta en un estuche de lujo troquelado que brilla en la oscuridad. ¡Incluye una introducción de Lisa Simpson!",
+    "tipo": "Cómic",
+    "autor": "Matt Groening",
+    "estudio": null,
+    "director": null,
+    "editorial": "Harry N. Abrams",
+    "fecha_lanzamiento": "2023-08-01",
+    "imagen": "https://m.media-amazon.com/images/I/811Nzse7FoL._SY522_.jpg"
+  }
+},
+{
+  "model": "categorias.item",
+  "pk": 22,
+  "fields": {
+    "titulo": "The Simpsons Treehouse of Horror Ominous Omnibus Vol. 3: Fiendish Fables of Devilish Delicacies (The Simpsons Treehouse of Horror, 3) (Volume 3)",
+    "descripcion": "Este tercer volumen de la trilogía es el complemento perfecto para cualquier colección de Los Simpson , y el estuche de lujo de tapa dura con una cubierta troquelada que brilla en la oscuridad lo convierte en un regalo perfecto. El volumen también incluye una introducción de Marge Simpson.",
+    "tipo": "Cómic",
+    "autor": "Matt Groening",
+    "estudio": null,
+    "director": null,
+    "editorial": "Harry N. Abrams",
+    "fecha_lanzamiento": "2024-08-06",
+    "imagen": "https://m.media-amazon.com/images/I/81bJXfrQHdL._SY522_.jpg"
+  }
+}
+]

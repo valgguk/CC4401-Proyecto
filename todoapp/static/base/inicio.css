@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  background: linear-gradient(120deg, #3baae1, #9fd1ee); /* celestes suaves */
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  color: #155e91;
+}
+
+.inicio-container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #f6fcff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(11, 140, 215, 0.15);
+}
+
+.inicio-container h2 {
+  color: #155e91;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.inicio-container p {
+  margin-bottom: 1rem;
+  color: #345c74;
+}
+
+.rol {
+  font-style: italic;
+  color: #4d7fa7;
+  margin-bottom: 1rem;
+}
+
+form button {
+  background: linear-gradient(135deg, #0b8cd7, #155e91);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(11, 140, 215, 0.3);
+}
+
+form button:hover {
+  background: linear-gradient(135deg, #155e91, #0b8cd7);
+  transform: scale(1.03);
+}
+
+a {
+  display: block;
+  margin-top: 0.75rem;
+  color: #0b8cd7;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #155e91;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #d8f0ff, #bce5f6);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(11, 140, 215, 0.1);
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #155e91;
+}
+
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar-center form {
+  display: flex;
+  align-items: center;
+  background-color: #ecfaff;
+  border-radius: 20px;
+  padding: 0.25rem 1rem;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.05);
+}
+
+.navbar-center input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: none;
+  font-family: 'Poppins', sans-serif;
+  color: #155e91;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #a3d4f4;
+  border-radius: 20px;
+  background-color: #ecfaff;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #155e91;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23155e91' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+select:hover,
+select:focus {
+  border-color: #0b8cd7;
+  background-color: #fff;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-right img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #0b8cd7;
+}
+
+.boton-imagen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #155e91;
+  background-color: #eaf9ff;
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(11, 140, 215, 0.1);
+  width: 80%;
+  max-width: 220px;
+}
+
+.boton-imagen:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(11, 140, 215, 0.2);
+}
+
+.boton-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  max-width: 150px;
+}
+
+.boton-imagen span {
+  margin-top: 8px;
+  font-weight: 600;
+  text-align: center;
+  color: #0b8cd7;
+}
+
+.boton-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.fila-centro {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

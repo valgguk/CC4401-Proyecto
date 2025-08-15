@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main-animado">
+    <section class="perfil-header" style="text-align: center;">
+        <h2><i class="fa-solid fa-user"></i> Perfil de {{ usuario_perfil.username }}</h2>
+
+        {% if usuario_perfil.avatar %}
+            <img src="{{ usuario_perfil.avatar.url }}" alt="Avatar" style="max-width: 150px; border-radius: 50%;">
+        {% else %}
+            <i class="fa-solid fa-circle-user fa-9x" style="color: #ccc;"></i>
+        {% endif %}
+    </section>
+
+    <section class="perfil-info">
+        <p><strong><i class="fa-solid fa-id-card"></i> Bio:</strong> {{ usuario_perfil.bio|default:"Este usuario no ha escrito una biografía aún." }}</p>
+        
+        <div class="perfil-estadisticas" style="margin: 15px 0;">
+            <p><strong><i class="fa-solid fa-users"></i> Seguidores:</strong> {{ usuario_perfil.seguidores.count }}</p>
+            <p>
+              <strong><i class="fa-solid fa-user-plus"></i> Siguiendo:</strong>
+              <a href="#" id="verSiguiendo" style="text-decoration: none; cursor: pointer; color: #4a00e0; font-weight: 700;">
+                {{ siguiendo|length }}
+              </a>
+            </p>
+        </div>
+
+        {% if not es_mi_perfil %}
+            <form method="post" action="{% url 'usuarios:toggle_seguir' usuario_perfil.username %}">
+                {% csrf_token %}
+                {% if request.user in usuario_perfil.seguidores.all %}
+                    <button type="submit" title="Dejar de seguir"><i class="fa-solid fa-user-minus"></i> Dejar de seguir</button>
+                {% else %}
+                    <button type="submit" title="Seguir"><i class="fa-solid fa-user-plus"></i> Seguir</button>
+                {% endif %}
+            </form>
+        {% endif %}
+    </section>
+
+    {% if es_mi_perfil %}
+        <div id="modalSiguiendo" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" id="cerrarModal" style="cursor:pointer;">&times;</span>
+                <h3>Usuarios que sigues</h3>
+                <ul>
+                    {% for u in siguiendo %}
+                        <li><i class="fa-solid fa-user"></i> 
+                            <a href="{% url 'usuarios:perfil_usuario' u.username %}">{{ u.username }}</a>
+                        </li>
+                    {% empty %}
+                        <li>No sigues a nadie todavía.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <p style="margin-top: 20px;">
+            <a href="{% url 'usuarios:editar_perfil' %}" class="boton-editar" title="Editar perfil">
+                <i class="fa-solid fa-pen"></i> Editar perfil
+            </a>
+        </p>
+    {% endif %}
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const btn = document.getElementById("verSiguiendo");
+    const modal = document.getElementById("modalSiguiendo");
+    const closeBtn = document.getElementById("cerrarModal");
+
+    if (btn && modal && closeBtn) {
+        btn.addEventListener("click", function(event) {
+            event.preventDefault();
+            modal.style.display = "flex";
+        });
+
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", function(e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,72 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+    width: 100%;
+    max-width: 400px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+    display: block;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #ff6f61;
+}
+
+.login-container input[type="submit"] {
+    background: linear-gradient(90deg, #36d1dc, #5b86e5);
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.login-container input[type="submit"]:hover {
+    background: linear-gradient(90deg, #5b86e5, #36d1dc);
+}

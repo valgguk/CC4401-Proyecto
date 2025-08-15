@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Biblioteca</title>
+    {% if tipo == "Anime" %}
+    <link rel="stylesheet" href="{% static 'todoapp/animes.css' %}" />
+    {% elif tipo == "Cómic" %}
+    <link rel="stylesheet" href="{% static 'todoapp/comics.css' %}" />
+    {% elif tipo == "Manga" %}
+    <link rel="stylesheet" href="{% static 'todoapp/mangas.css' %}" />
+    {% elif tipo == "Libro" %}
+    <link rel="stylesheet" href="{% static 'todoapp/libros.css' %}" />
+    {% elif tipo == "Película" %}
+    <link rel="stylesheet" href="{% static 'todoapp/peliculas.css' %}" />
+    {% endif %}
+</head>
+<body>
+    <h1> Mis {{ tipo }}s </h1>
+        {% if biblioteca %}
+
+            <!-- Form para los filtros -->
+            <form method="get">
+                <input type="text" name="titulo" placeholder="Buscar por título" value="{{ titulo_actual|default:'' }}">
+                <input type="text" name="autor" placeholder="Buscar por autor" value="{{ autor_actual|default:'' }}">
+                {% if tipo == "Libro" or tipo == "Manga" or tipo == "Cómic" %}
+                    <input type="text" name="editorial" placeholder="Buscar por editorial" value="{{ editorial_actual|default:'' }}">
+
+                {% elif tipo == "Anime" or tipo == "Película" %}
+                    <input type="text" name="estudio" placeholder="Buscar por estudio" value="{{ estudio_actual|default:'' }}">
+                    <input type="text" name="director" placeholder="Buscar por director" value="{{ director_actual|default:'' }}">
+
+                {% endif %}
+                <input type="date" name="fecha_lanzamiento" placeholder="Buscar por fecha de lanzamiento" value="{{ fecha_lanzamiento_actual|default:'' }}">
+                
+                <select name="orden_puntuacion">
+                    <option value="" disabled {% if not orden_puntuacion %}selected hidden{% endif %}>Orden puntuación</option>
+                    <option value="ascendente" {% if orden_puntuacion == "ascendente" %}selected{% endif %}>Ascendente</option>
+                    <option value="descendente" {% if orden_puntuacion == "descendente" %}selected{% endif %}>Descendente</option>
+                </select>
+
+                <button type="submit">Buscar</button>
+                <a href="{% url 'mis_items' tipo %}">Limpiar Filtros</a>
+            </form>
+            <!-- Fin form -->
+            
+        <table>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Imagen</th>
+                <th>Marca página</th>
+                <th>Mi puntación</th>
+            </tr>
+            {% for favorito in biblioteca %}
+            <tr onclick="window.location.href='{% url 'mi_item' tipo=tipo favorito_id=favorito.id %}'" style="cursor: pointer;">
+                <td>{{ favorito.item.titulo }}</td>
+                <td>{{ favorito.item.autor }}</td>
+                <td>
+                {% if favorito.item.imagen %}
+                    <img src="{{ favorito.item.imagen }}" alt="Portada" style="max-height: 180px; max-width: 140px;">
+                {% else %}
+                    <img src="{% static 'image/icon_default.jpeg' %}" alt="Sin imagen" style="max-height: 100px;">
+                {% endif %}
+                </td>
+                <td>
+                {% if favorito.puntuacion %}
+                    {{ favorito.marca_pagina }}
+                {% else %}
+                    Aún no hay marca
+                {% endif %}
+                </td>
+                <td>
+                {% if favorito.puntuacion %}
+                    {{ favorito.puntuacion }}
+                {% else %}
+                    Sin puntuar
+                {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% elif aplica_filtro %}
+            <form method="get">
+                <input type="text" name="titulo" placeholder="Buscar por título" value="{{ titulo_actual|default:'' }}">
+                <input type="text" name="autor" placeholder="Buscar por autor" value="{{ autor_actual|default:'' }}">
+                {% if tipo == "Libro" or tipo == "Manga" or tipo == "Cómic" %}
+                    <input type="text" name="editorial" placeholder="Buscar por editorial" value="{{ editorial_actual|default:'' }}">
+
+                {% elif tipo == "Anime" or tipo == "Película" %}
+                    <input type="text" name="estudio" placeholder="Buscar por estudio" value="{{ estudio_actual|default:'' }}">
+                    <input type="text" name="director" placeholder="Buscar por director" value="{{ director_actual|default:'' }}">
+
+                {% endif %}
+                <input type="date" name="fecha_lanzamiento" placeholder="Buscar por fecha de lanzamiento" value="{{ fecha_lanzamiento_actual|default:'' }}">
+                
+                <!-- Falta controlar el estado en el model de favorito si lo ponemos
+                <select name="estado">
+                    <option value="" selected disabled hidden>Progreso</option>
+                    <option value="completado">Completado</option>
+                    <option value="pendiente">Pendiente</option>
+                </select>
+                -->
+                
+                <select name="orden_puntuacion">
+                    <option value="" disabled {% if not orden_puntuacion %}selected hidden{% endif %}>Orden puntuación</option>
+                    <option value="ascendente" {% if orden_puntuacion == "ascendente" %}selected{% endif %}>Ascendente</option>
+                    <option value="descendente" {% if orden_puntuacion == "descendente" %}selected{% endif %}>Descendente</option>
+                </select>
+
+                <button type="submit">Buscar</button>
+                <a href="{% url 'mis_items' tipo %}">Limpiar Filtros</a>
+            </form>
+        <table>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Imagen</th>
+                <th>Marca página</th>
+                <th>Mi puntación</th>
+            </tr>
+        </table>
+        <p>No se han encontrado elementos con los filtros seleccionados...</p>
+        {% else %}
+        <p>Aún no has agregado algún item del tipo: {{ tipo }}. Ve a la biblioteca y añade tus favoritos!</p>
+        {% endif %}
+        <a href="{% url 'mi-biblioteca' %}">
+            <button type="button">Volver a mi biblioteca</button>
+        </a>
+</body>
+</html>

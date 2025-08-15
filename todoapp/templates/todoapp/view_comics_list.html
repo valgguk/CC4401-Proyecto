@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'todoapp/comics.css' %}">
+    <title>Comics</title>
+</head>
+<body>
+    <h2>Comics</h2>
+    <a href="{% url 'biblioteca_global' %}" class="boton-volver">← Volver a la biblioteca</a>
+
+    <form method="get">
+        <fieldset>
+            <legend><strong>Buscar Comics</strong></legend>
+            <input type="text" name="titulo" placeholder="Buscar por título" value="{{ titulo_actual|default:'' }}">
+            <input type="text" name="autor" placeholder="Buscar por autor" value="{{ autor_actual|default:'' }}">
+            <input type="text" name="editorial" placeholder="Buscar por editorial" value="{{ editorial_actual|default:'' }}">
+            <input type="text" name="descripcion" placeholder="Buscar por palabras clave" value="{{ descripcion_actual|default:'' }}">
+            <input type="date" name="fecha_lanzamiento" placeholder="Buscar por fecha de lanzamiento" value="{{ fecha_lanzamiento_actual|default:'' }}">
+            <br>
+            <div style="margin-top: 10px; text-align: left;">
+                <button type="submit">Buscar</button>
+                <a href="{% url 'view_comics_list' %}" style="margin-left: 10px;">Limpiar Filtros</a>
+            </div>
+        </fieldset>
+    </form>
+
+    {% if comics %}
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Fecha Lanzamiento</th>
+            <th>Imagen</th>
+            <th>Favorito</th>
+        </tr>
+
+        {% for comic in comics %}
+        <tr>
+            <td style="max-width: 180px; word-wrap: break-word; white-space: normal; line-height: 1.2em;">
+                {% if comic.titulo %}
+                    {{ comic.titulo }}
+                {% else %}
+                    <span style="color: gray;">N/A</span>
+                {% endif %}
+            </td>
+            <td style="max-width: 250px; word-wrap: break-word;">
+                {% if comic.descripcion %}
+                    <div class="descripcion-corta">
+                        {{ comic.descripcion|truncatechars:150 }}
+                        <a href="#" class="ver-mas">Ver más</a>
+                    </div>
+                    <div class="descripcion-completa" style="display: none;">
+                        {{ comic.descripcion }}
+                        <a href="#" class="ver-menos">Ver menos</a>
+                    </div>
+                {% else %}
+                    <span style="color: gray;">N/A</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if comic.autor %}
+                    {{ comic.autor }}
+                {% else %}
+                    <span style="color: gray;">N/A</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if comic.editorial %}
+                    {{ comic.editorial }}
+                {% else %}
+                    <span style="color: gray;">N/A</span>
+                {% endif %}
+            </td>
+            <td>
+                {% if comic.fecha_lanzamiento %}
+                    {{ comic.fecha_lanzamiento|date:"Y-m-d" }}
+                {% else %}
+                    <span style="color: gray;">N/A</span>
+                {% endif %}
+            </td>
+            <td style="min-height: 100px; text-align: center; vertical-align: middle;">
+                {% if comic.imagen %}
+                    <img src="{{ comic.imagen }}" alt="Portada" style="max-height: 180px; max-width: 140px;">
+                {% else %}
+                    <img src="{% static 'image/icon_default.jpeg' %}" alt="Sin imagen" style="max-height: 100px;">
+                {% endif %}
+            </td>
+            <td>
+                {% if comic.id not in favs %}
+                    <button onclick="abrirModal({{ comic.id }}, '{{ comic.titulo }}')">Agregar</button>
+                {% else %}
+                    Ya está en tus favoritos!
+                {% endif %}
+            </td>
+        </tr>
+        <td>
+           <a href="{% url 'detalle_item' comic.id %}">Ver reseñas</a>
+        </td>
+        {% endfor %}
+        
+    </table>
+    <div class="modal-overlay" id="modal">
+        <div class="modal-contenido">
+        <form method="POST" id="formulario-modal">
+            {% csrf_token %}
+            <h3>Añadir a favoritos:</h3>
+            <h4 id="modal-titulo"></h4>
+            <label for="marca_pagina">Marca página, en donde vas?:</label>
+            <input type="text" name="marca_pagina" required placeholder="Estado actual"><br><br>
+            <label for="puntuacion">Que puntación le das?:</label>
+            <select name="puntuacion" required>
+                <option value="">Ingresar puntuación</option>
+                <option value="1">1 ⭐</option>
+                <option value="2">2 ⭐⭐</option>
+                <option value="3">3 ⭐⭐⭐</option>
+                <option value="4">4 ⭐⭐⭐⭐</option>
+                <option value="5">5 ⭐⭐⭐⭐⭐</option>
+            </select><br><br>
+            <div class="modal-acciones">
+            <button type="button" onclick="cerrarModal()">Cancelar</button>
+            <button type="submit">Confirmar</button>
+            </div>
+        </form>
+        </div>
+    </div>    
+    {% else %}
+        <p>No hay comics que coincidan con el filtro o aún no se ha agregado ¡Solicita a que el admin agregue uno! :D</p>
+    {% endif %}
+</body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const verMas = document.querySelectorAll('.ver-mas');
+    const verMenos = document.querySelectorAll('.ver-menos');
+
+    verMas.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const corta = this.closest('.descripcion-corta');
+            const completa = corta.nextElementSibling;
+            corta.style.display = 'none';
+            completa.style.display = 'block';
+        });
+    });
+
+    verMenos.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const completa = this.closest('.descripcion-completa');
+            const corta = completa.previousElementSibling;
+            completa.style.display = 'none';
+            corta.style.display = 'block';
+        });
+    });
+});
+function abrirModal(id, titulo) {
+    const modal = document.getElementById('modal');
+    const form = document.getElementById('formulario-modal');
+    const nombre = document.getElementById('modal-titulo');
+
+    nombre.textContent = titulo ;
+    form.action = `/agregar/${id}/`;  // ruta con el ID dinámico
+
+    modal.style.display = 'flex';
+}
+
+function cerrarModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+</script>

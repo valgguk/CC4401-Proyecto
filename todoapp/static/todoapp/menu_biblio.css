@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  background-color: #e6f5d0; /* verde pistacho suave */
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 2rem;
+}
+
+.inicio-container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #dff1ff; /* celeste clarito */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.inicio-container h2 {
+  color: #2d2d2d;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.inicio-container p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.rol {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+form button:hover {
+  background-color: #3c90e4;
+}
+
+a {
+  display: block;
+  margin-top: 0.75rem;
+  color: #007bff;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #dff1ff; /* celeste clarito */
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-left {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar-center form {
+  display: flex;
+  align-items: center;
+  background-color: #f0fbff;
+  border-radius: 20px;
+  padding: 0.25rem 1rem;
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.05);
+}
+
+.navbar-center input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f0fbff;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23007bff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+select:hover,
+select:focus {
+  border-color: #007bff;
+  background-color: #fff;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-right img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #007bff;
+}
+
+.boton-imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background-color: #eefeff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 220px;
+}
+
+.boton-imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.boton-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-width: 150px;
+}
+
+.boton-imagen span {
+    margin-top: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.boton-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 100%; /* ajustado al padre */
+    margin: 30px auto 0;
+}
+
+.boton-grid > * {
+    justify-self: center;
+}
+.fila-centro {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+.fila-centro .boton-imagen {
+  width: 220px;  
+  max-width: 100%;     
+  flex: none;          
+}
+
+.boton-index {
+  display: block;               
+  width: fit-content;           
+  margin: 2rem auto;           
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.boton-index:hover {
+  background-color: #3c90e4;
+  transform: scale(1.03);
+}
+
+

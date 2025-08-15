@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Biblioteca</title>
+    <link rel="stylesheet" href="{% static 'todoapp/menu_biblio.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+      <a href="{% url 'inicio' %}">
+        <div class="navbar-left">
+            <span class="site-name">GeekLog</span>
+        </div>
+      </a>
+        <div class="navbar-center">
+            <form method="post" action="{% url 'buscar_item' %}">
+              {% csrf_token %}
+                <input type="text" name="titulo" placeholder="Buscar item">
+                <select name="tipo">
+                    <option value="">-- Tipo --</option>
+                    <option value="Libro">Libro</option>
+                    <option value="Manga">Manga</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Película">Película</option>
+                    <option value="Cómic">Cómic</option>
+                </select>
+            </form>
+            <form method="get" >
+                <input type="text" name="q2" placeholder="Buscar usuario">
+            </form>
+        </div>
+
+        <div class="navbar-right">
+            <a href="{% url 'usuarios:perfil_usuario' request.user.username %}">
+            <img src="{% static 'image/no_user.png' %}" alt="Perfil" class="profile-icon">
+            </a>
+        </div>
+    </nav>
+    <div class="inicio-container">
+        <h2> Mi Biblioteca </h2>
+        <div class="boton-grid">
+            <a href="{% url 'mis_items' 'Anime' %}" class="boton-imagen">
+                <img src="{% static 'image/anime_icono.png' %}" alt="Mis animes">
+            <span>Ver mis animes</span>
+            </a>
+            <a href="{% url 'mis_items' 'Manga' %}" class="boton-imagen">
+                <img src="{% static 'image/manga_icono.png' %}" alt="Mis mangas">
+                <span>Ver mis Mangas</span>
+            </a>
+            <a href="{% url 'mis_items' 'Película' %}" class="boton-imagen">
+                <img src="{% static 'image/cine_icono.png' %}" alt="Mis peliculas">
+                <span>Ver mis Películas</span>
+            </a>
+            <a href="{% url 'mis_items' 'Libro' %}" class="boton-imagen">
+                <img src="{% static 'image/libro_icono.png' %}" alt="Mis libros">
+                <span>Ver mis Libros</span>
+            </a>
+            <div class="fila-centro">
+                <a href="{% url 'mis_items' 'Cómic' %}" class="boton-imagen boton-centrado">
+                    <img src="{% static 'image/comic_icono.png' %}" alt="Mis comics">
+                    <span>Ver mis Cómics</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <a class="boton-index" href="{% url 'inicio' %}">Volver al inicio</a>
+</body>
+</html>
